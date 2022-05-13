@@ -76,7 +76,7 @@ account_no:
     scanf("%s", add.citizenship);
     printf("\nEnter the phone number: ");
     scanf("%lf", &add.phone);
-    printf("\nEnter the amount to deposit:$");
+    printf("\nEnter the amount to deposit:₹");
     scanf("%f", &add.amt);
     printf("\nType of account:\n\t#Saving\n\t#Current\n\t#Fixed1(for 1 year)\n\t#Fixed2(for 2 years)\n\t#Fixed3(for 3 years)\n\n\tEnter your choice:");
     scanf("%s", add.acc_type);
@@ -236,7 +236,7 @@ void transact(void)
             scanf("%d", &choice);
             if (choice == 1)
             {
-                printf("Enter the amount you want to deposit:$ ");
+                printf("Enter the amount you want to deposit:₹ ");
                 scanf("%f", &transaction.amt);
                 add.amt += transaction.amt;
                 fprintf(newrec, "%d %s %d/%d/%d %d %s %s %lf %s %f %d/%d/%d\n", add.acc_no, add.name, add.dob.month, add.dob.day, add.dob.year, add.age, add.address, add.citizenship, add.phone, add.acc_type, add.amt, add.deposit.month, add.deposit.day, add.deposit.year);
@@ -244,7 +244,7 @@ void transact(void)
             }
             else
             {
-                printf("Enter the amount you want to withdraw:$ ");
+                printf("Enter the amount you want to withdraw:₹ ");
                 scanf("%f", &transaction.amt);
                 add.amt -= transaction.amt;
                 fprintf(newrec, "%d %s %d/%d/%d %d %s %s %lf %s %f %d/%d/%d\n", add.acc_no, add.name, add.dob.month, add.dob.day, add.dob.year, add.age, add.address, add.citizenship, add.phone, add.acc_type, add.amt, add.deposit.month, add.deposit.day, add.deposit.year);
@@ -366,35 +366,35 @@ void see(void)
                 system("cls");
                 test = 1;
 
-                printf("\nAccount NO.:%d\nName:%s \nDOB:%d/%d/%d \nAge:%d \nAddress:%s \nCitizenship No:%s \nPhone number:%.0lf \nType Of Account:%s \nAmount deposited:$ %.2f \nDate Of Deposit:%d/%d/%d\n\n", add.acc_no, add.name, add.dob.month, add.dob.day, add.dob.year, add.age, add.address, add.citizenship, add.phone,
+                printf("\nAccount NO.:%d\nName:%s \nDOB:%d/%d/%d \nAge:%d \nAddress:%s \nCitizenship No:%s \nPhone number:%.0lf \nType Of Account:%s \nAmount deposited:₹ %.2f \nDate Of Deposit:%d/%d/%d\n\n", add.acc_no, add.name, add.dob.month, add.dob.day, add.dob.year, add.age, add.address, add.citizenship, add.phone,
                        add.acc_type, add.amt, add.deposit.month, add.deposit.day, add.deposit.year);
                 if (strcmpi(add.acc_type, "fixed1") == 0)
                 {
                     time = 1.0;
                     rate = 9;
                     intrst = interest(time, add.amt, rate);
-                    printf("\n\nYou will get $%.2f as interest on %d/%d/%d", intrst, add.deposit.month, add.deposit.day, add.deposit.year + 1);
+                    printf("\n\nYou will get ₹%.2f as interest on %d/%d/%d", intrst, add.deposit.month, add.deposit.day, add.deposit.year + 1);
                 }
                 else if (strcmpi(add.acc_type, "fixed2") == 0)
                 {
                     time = 2.0;
                     rate = 11;
                     intrst = interest(time, add.amt, rate);
-                    printf("\n\nYou will get $.%.2f as interest on %d/%d/%d", intrst, add.deposit.month, add.deposit.day, add.deposit.year + 2);
+                    printf("\n\nYou will get ₹.%.2f as interest on %d/%d/%d", intrst, add.deposit.month, add.deposit.day, add.deposit.year + 2);
                 }
                 else if (strcmpi(add.acc_type, "fixed3") == 0)
                 {
                     time = 3.0;
                     rate = 13;
                     intrst = interest(time, add.amt, rate);
-                    printf("\n\nYou will get $.%.2f as interest on %d/%d/%d", intrst, add.deposit.month, add.deposit.day, add.deposit.year + 3);
+                    printf("\n\nYou will get ₹.%.2f as interest on %d/%d/%d", intrst, add.deposit.month, add.deposit.day, add.deposit.year + 3);
                 }
                 else if (strcmpi(add.acc_type, "saving") == 0)
                 {
                     time = (1.0 / 12.0);
                     rate = 8;
                     intrst = interest(time, add.amt, rate);
-                    printf("\n\nYou will get $.%.2f as interest on %d of every month", intrst, add.deposit.day);
+                    printf("\n\nYou will get ₹.%.2f as interest on %d of every month", intrst, add.deposit.day);
                 }
                 else if (strcmpi(add.acc_type, "current") == 0)
                 {
@@ -414,35 +414,35 @@ void see(void)
             {
                 system("cls");
                 test = 1;
-                printf("\nAccount No.:%d\nName:%s \nDOB:%d/%d/%d \nAge:%d \nAddress:%s \nCitizenship No:%s \nPhone number:%.0lf \nType Of Account:%s \nAmount deposited:$%.2f \nDate Of Deposit:%d/%d/%d\n\n", add.acc_no, add.name, add.dob.month, add.dob.day, add.dob.year, add.age, add.address, add.citizenship, add.phone,
+                printf("\nAccount No.:%d\nName:%s \nDOB:%d/%d/%d \nAge:%d \nAddress:%s \nCitizenship No:%s \nPhone number:%.0lf \nType Of Account:%s \nAmount deposited:₹%.2f \nDate Of Deposit:%d/%d/%d\n\n", add.acc_no, add.name, add.dob.month, add.dob.day, add.dob.year, add.age, add.address, add.citizenship, add.phone,
                        add.acc_type, add.amt, add.deposit.month, add.deposit.day, add.deposit.year);
                 if (strcmpi(add.acc_type, "fixed1") == 0)
                 {
                     time = 1.0;
                     rate = 9;
                     intrst = interest(time, add.amt, rate);
-                    printf("\n\nYou will get $.%.2f as interest on %d/%d/%d", intrst, add.deposit.month, add.deposit.day, add.deposit.year + 1);
+                    printf("\n\nYou will get ₹.%.2f as interest on %d/%d/%d", intrst, add.deposit.month, add.deposit.day, add.deposit.year + 1);
                 }
                 else if (strcmpi(add.acc_type, "fixed2") == 0)
                 {
                     time = 2.0;
                     rate = 11;
                     intrst = interest(time, add.amt, rate);
-                    printf("\n\nYou will get $.%.2f as interest on %d/%d/%d", intrst, add.deposit.month, add.deposit.day, add.deposit.year + 2);
+                    printf("\n\nYou will get ₹.%.2f as interest on %d/%d/%d", intrst, add.deposit.month, add.deposit.day, add.deposit.year + 2);
                 }
                 else if (strcmpi(add.acc_type, "fixed3") == 0)
                 {
                     time = 3.0;
                     rate = 13;
                     intrst = interest(time, add.amt, rate);
-                    printf("\n\nYou will get $.%.2f as interest on %d/%d/%d", intrst, add.deposit.month, add.deposit.day, add.deposit.year + 3);
+                    printf("\n\nYou will get ₹.%.2f as interest on %d/%d/%d", intrst, add.deposit.month, add.deposit.day, add.deposit.year + 3);
                 }
                 else if (strcmpi(add.acc_type, "saving") == 0)
                 {
                     time = (1.0 / 12.0);
                     rate = 8;
                     intrst = interest(time, add.amt, rate);
-                    printf("\n\nYou will get $.%.2f as interest on %d of every month", intrst, add.deposit.day);
+                    printf("\n\nYou will get ₹.%.2f as interest on %d of every month", intrst, add.deposit.day);
                 }
                 else if (strcmpi(add.acc_type, "current") == 0)
                 {
@@ -713,7 +713,7 @@ void mainMenu()
 void checkBalance(float balance)
 {
     printf("You Choose to See your Balance\n");
-    printf("****Your Available Balance is:   $%.2f\n\n", balance);
+    printf("****Your Available Balance is:   ₹%.2f\n\n", balance);
 
 } // Check Balance
 
@@ -721,13 +721,13 @@ float moneyDeposit(float balance)
 {
     float deposit;
     printf("You choose to Deposit a money\n");
-    printf("$$$$Your Balance is: $%.2f\n\n", balance);
+    printf("$$$$Your Balance is: ₹%.2f\n\n", balance);
     printf("****Enter your amount to Deposit\n");
     scanf("%f", &deposit);
 
     balance += deposit;
 
-    printf("****Your New Balance is:   $%.2f\n\n", balance);
+    printf("****Your New Balance is:   ₹%.2f\n\n", balance);
     return balance;
 
 } // money deposit
@@ -738,7 +738,7 @@ float moneyWithdraw(float balance)
     bool back = true;
 
     printf("You choose to Withdraw a money\n");
-    printf("$$$$Your Balance is: $%.2f\n\n", balance);
+    printf("$$$$Your Balance is: ₹%.2f\n\n", balance);
 
     while (back)
     {
@@ -749,8 +749,8 @@ float moneyWithdraw(float balance)
         {
             back = false;
             balance -= withdraw;
-            printf("$$$$Your withdrawing money is:  $%.2f\n", withdraw);
-            printf("****Your New Balance is:   $%.2f\n\n", balance);
+            printf("$$$$Your withdrawing money is:  ₹%.2f\n", withdraw);
+            printf("****Your New Balance is:   ₹%.2f\n\n", balance);
         }
 
         else
@@ -758,7 +758,7 @@ float moneyWithdraw(float balance)
 
             printf("+++You don't have enough money+++\n");
             printf("Please contact to your Bank Customer Services\n");
-            printf("****Your Balance is:   $%.2f\n\n", balance);
+            printf("****Your Balance is:   ₹%.2f\n\n", balance);
         }
     }
     return balance;
