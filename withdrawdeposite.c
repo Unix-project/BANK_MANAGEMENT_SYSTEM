@@ -8,7 +8,7 @@ void main()
 {
 	while (pin != 1520)
 	{
-		printf("ENTER YOUR SECRET PIN NUMBER:");
+		printf("ENTER YOUR SECRET PIN NUMBER: ");
 		scanf("%d", &pin);
 		if (pin != 1520)
 		printf("PLEASE ENTER VALID PASSWORD\n");
@@ -39,7 +39,7 @@ void main()
 			{
 				amount = amount - withdraw;
 				printf("\n\n PLEASE COLLECT CASH");
-				printf("\n YOUR CURRENT BALANCE IS%lu", amount);
+				printf("\n YOUR CURRENT BALANCE IS %lu", amount);
 			}
 			break;
 		case 2:
